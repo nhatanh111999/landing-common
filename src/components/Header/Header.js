@@ -6,32 +6,41 @@ import Button from '@mui/material/Button';
 const menu = [
     {
         Id: 1,
-        Title: "Home"
+        Title: "Home",
+        Image: "home.png"
     },
     {
         Id: 2,
-        Title: "About Us"
+        Title: "About Us",
+        Image: "about.png"
     },
     {
         Id: 3,
-        Title: "Contact"
+        Title: "Contact",
+        Image: "contact.png"
     },
     {
         Id: 4,
-        Title: "Service"
+        Title: "Service",
+        Image: "service.png"
     },
     {
         Id: 5,
-        Title: "Features"
+        Title: "Features",
+        Image: "feature.png"
     },
     {
         Id: 6,
-        Title: "Project"
+        Title: "Project",
+        Image: "project.png"
     }
 ]
 
 const Header = () => {
     const [sticky, setSticky] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
+
+    //scroll
     const onScrollHeader = () => {
         if (typeof window !== "undefined") {
             window.addEventListener("scroll", () => {
@@ -45,6 +54,14 @@ const Header = () => {
         }
     }
     onScrollHeader()
+
+    const onClickOpenMenu = () => {
+        setIsOpen(true)
+    }
+
+    const onClickCloseMenu = () => {
+        setIsOpen(false)
+    }
 
     return (
         <div>
@@ -62,7 +79,28 @@ const Header = () => {
                             )
                         })}
                     </div>
-                    <div className='icon-menu'/>
+                    <div>
+                        <img onClick={() => onClickOpenMenu()} src='/icons/menu.png' className={`icon-open ${isOpen ? 'active':''}`} url="menu" />
+                    </div>
+                </div>
+                <div className={`side-bar ${isOpen ? 'active':''}`}>
+                    <div className='icon-close'>
+                        <img onClick={() => onClickCloseMenu()} src='/icons/cancel.png' />
+                    </div>
+                    <div className='menu-sidebar'>
+                        {menu.map((item, idex) => {
+                            return (
+                                <a key={idex} onClick={() => onClickCloseMenu()} href={`# ${item.Title}`}>
+                                    <div className='icon-item'>
+                                        <img src={`/icons/${item.Image}`} url="icon-home" />
+                                    </div>
+                                    <div className={`${inter.className} item`}>
+                                        {item.Title}
+                                    </div>
+                                </a>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
             <div className='Banner'>

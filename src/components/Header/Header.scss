@@ -58,6 +58,74 @@ $width-common: 100%;
         }
 
     }
+    .side-bar{
+        position: absolute;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: #eaeef1;
+        transition: 0.6s;
+        box-shadow: 0 0 10px 0 rgba(129, 123, 123, 0.103);
+        &.active{
+            right: 0;
+            width: 250px;
+            transition: 0.6s;
+            .icon-close{
+                visibility: visible;
+                transition: ease 0.3s;
+            }
+        }
+
+        .icon-close{
+            visibility: hidden;
+            padding: 15px 15px 10px 0;
+            float: right;
+            img{
+                width: 22px;
+                height: 22px;
+                transition: 0.3s;
+            }
+            img:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+                transition: 0.3s;
+            }
+        }
+
+        .menu-sidebar{
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: auto;    
+            a{
+                color: rgb(0, 0, 0);
+                display: flex;
+                align-items: center;
+                padding: 15px 30px;
+                .icon-item{
+                    margin-right: 8px;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 20px;
+                        
+                        height: auto;
+                    }
+                }
+                .item{
+                    width: 100%;
+                    align-items: center;
+                    font-size: 18px;
+                }   
+            }
+            a:hover{
+                color: #ffffff;
+                background-color: #7089f8;
+            }
+            
+        }
+    }
 
     .logo {
         position: relative;
@@ -73,7 +141,6 @@ $width-common: 100%;
         color: $blue;
         position: relative;
         box-shadow: 0 0 10px 0 rgba(129, 123, 123, 0.103);
-        transition: 0.6s;
         transform: scale(1.1);
         cursor: pointer;
         transition: 0.3s;
@@ -87,21 +154,21 @@ $width-common: 100%;
 
     }
 
-    .icon-menu {
+    .icon-open {
         position: relative;
-        transition: 0.3s;
-        background: url(../../../public/icons/open-menu.png);
-        background-size: cover;
         color: $blue;
-        width: 40px;
-        height: 40px;
+        height: 60px;
+        text-decoration: none;
         padding: 1rem;
         display: none;
+        &.active{
+            visibility: hidden;
+        }
     }
-    .icon-menu:hover{
+    .icon-open:hover{
         cursor: pointer;
         transform: scale(1.1);
-        box-shadow: 0 0 10px 0 rgba(129, 123, 123, 0.103);
+        transition: 0.3s;
     }
 }
 
@@ -199,7 +266,7 @@ $width-common: 100%;
         }
 
 
-        .icon-menu {
+        .icon-open {
             display: block;
         }
 
