@@ -109,3 +109,20 @@ a {
   width: 80%;
   margin: 0 auto;
 }
+
+.mb-3{
+  margin-bottom: 30px;
+}
+
+.mt-2{
+  margin-top: 20px;
+}
+.mt-1{
+  margin-top: 10px;
+}
+.weight-600{
+  font-weight: 600;
+}
+.weight-100{
+  font-weight: 100;
+}

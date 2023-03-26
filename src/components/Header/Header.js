@@ -79,11 +79,11 @@ const Header = () => {
                             )
                         })}
                     </div>
-                    <div>
-                        <img onClick={() => onClickOpenMenu()} src='/icons/menu.png' className={`icon-open ${isOpen ? 'active':''}`} url="menu" />
+                    <div className={`icon-open ${isOpen ? 'active' : ''}`}>
+                        <img onClick={() => onClickOpenMenu()} src='/icons/menu.png'  url="menu" />
                     </div>
                 </div>
-                <div className={`side-bar ${isOpen ? 'active':''}`}>
+                <div className={`side-bar ${isOpen ? 'active' : ''}`}>
                     <div className='icon-close'>
                         <img onClick={() => onClickCloseMenu()} src='/icons/cancel.png' />
                     </div>

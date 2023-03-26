@@ -12,7 +12,6 @@ $width-common: 100%;
     transition: 0.6s;
     z-index: 1000;
     padding: 10px 0;
-
     .container {
         display: flex;
         justify-content: space-between;
@@ -157,12 +156,14 @@ $width-common: 100%;
     .icon-open {
         position: relative;
         color: $blue;
-        height: 60px;
         text-decoration: none;
         padding: 1rem;
         display: none;
         &.active{
             visibility: hidden;
+        }
+        img{
+            height: 30px;
         }
     }
     .icon-open:hover{
@@ -175,12 +176,12 @@ $width-common: 100%;
 .Banner {
     position: relative;
     width: $width-common;
-    height: 80vh;
+    height: auto;
     background: url(../../../public/images/backgound-header.png);
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
-
+    margin-bottom: 130px;
     .container {
         display: flex;
         justify-content: space-between;
@@ -253,18 +254,16 @@ $width-common: 100%;
     }
 }
 
-/* Mobile */
 @media (max-width: 940px) {
     .Header {
         padding: 10px 10px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
+        
         .navbar {
             display: none;
         }
-
 
         .icon-open {
             display: block;
@@ -276,8 +275,9 @@ $width-common: 100%;
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
     .Banner {
+        margin-bottom: 70px;
         .container {
             .grid-container {
                 grid-template-columns: auto;
